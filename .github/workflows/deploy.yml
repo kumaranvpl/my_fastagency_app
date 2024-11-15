@@ -25,9 +25,9 @@ jobs:
 
       - name: Deploy to Fly
         run: |
-            fly deploy --remote-only --config fly.toml --yes
-            fly scale count 1 --config fly.toml --yes
-            fly secrets set OPENAI_API_KEY=$OPENAI_API_KEY
+            flyctl deploy --remote-only --config fly.toml --yes
+            flyctl scale count 1 --config fly.toml --yes
+            flyctl secrets set OPENAI_API_KEY=$OPENAI_API_KEY
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}

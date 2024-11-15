@@ -9,8 +9,13 @@ if [ -f registered_app_domain.txt ]; then
     exit 1
 fi
 
-echo -e "\033[0;32mLogging into fly.io\033[0m"
-fly auth login
+echo -e "\033[0;32mChecking if already logged into fly.io\033[0m"
+if ! fly auth whoami > /dev/null 2>&1; then
+    echo -e "\033[0;32mLogging into fly.io\033[0m"
+    fly auth login
+else
+    echo -e "\033[0;32mAlready logged into fly.io\033[0m"
+fi
 
 export FLY_APP_NAME=kumaran-fastagency-app
 

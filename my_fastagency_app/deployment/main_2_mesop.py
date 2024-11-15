@@ -21,7 +21,6 @@ auth = BasicAuth(
 
 ui = MesopUI(auth=auth)
 
-
 app = FastAgency(
     provider=provider,
     ui=ui,

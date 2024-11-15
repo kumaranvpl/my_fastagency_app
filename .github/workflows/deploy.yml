@@ -1,5 +1,5 @@
 
-name: Fly Deploy
+name: flyctl Deploy
 
 on:
   push:

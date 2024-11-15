@@ -12,7 +12,7 @@ fi
 echo -e "\033[0;32mLogging into fly.io\033[0m"
 fly auth login
 
-export FLY_APP_NAME=my-fastagency-app
+export FLY_APP_NAME=kumaran-fastagency-app
 
 echo -e "\033[0;32mRegistering app name in fly.io\033[0m"
 if fly apps create $FLY_APP_NAME; then
